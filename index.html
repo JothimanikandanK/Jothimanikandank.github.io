@@ -154,81 +154,85 @@
                     <h3 data-aos="fade-up">Career</h3>
                 </div>
             </div>
-
+        
             <div class="row block-large-1-2 block-900-full work-positions">
-
+        
                 <div class="column" data-aos="fade-up">
                     <div class="position">
                         <div class="position__header">
                             <h6>
-                                <span class="position__co">Vintorix</span>
-                                <span class="position__pos">Campaign Analyst</span>
+                                <span class="position__co"><i class="fa-solid fa-building"></i> Vintorix</span>
+                                <span class="position__pos"><i class="fa-solid fa-chart-line"></i>  Campaign Analyst</span>
                             </h6>
                             <div class="position__timeframe">
-                                August 2024 - Present
+                                August 2024 – Present
                             </div>
                         </div>
-
+        
                         <p>
-                            In my role, I've leveraged data analysis to manage and optimize Campaign performance and promotional offers at Vintorix. This involved in-depth analysis of offer performance across all champion categories, providing critical insights to inform strategic decision-making.  
+                            Responsible for analyzing marketing campaigns and promotional performance to optimize strategy and ROI. Utilized data-driven insights to improve engagement across various product categories. Collaborated with cross-functional teams to support decision-making with accurate reporting and actionable recommendations.
                         </p>
                     </div>
                 </div> <!-- end column -->
+        
                 <div class="column" data-aos="fade-up">
                     <div class="position">
                         <div class="position__header">
                             <h6>
-                                <span class="position__co">PACET</span>
-                                <span class="position__pos">BE - CSE</span>
+                                <span class="position__co"><i class="fa-solid fa-graduation-cap"></i> PACET</span>
+                                <span class="position__pos">B.E. – Computer Science and Engineering</span>
                             </h6>
                             <div class="position__timeframe">
-                                August 2020 - May 2024
+                                August 2020 – May 2024
                             </div>
                         </div>
-
+        
                         <p>
-                            Graduated with <b> First Class with Distinction</b> in Bachelor of Engineering in Computer Science and Engineering. Key coursework included Database Management Systems, Statistical Analysis, and Machine Learning. Completed projects involving data analysis using Python (Pandas, NumPy) and SQL. Honed skills in Python, SQL, and database design.
+                            Graduated with <b>First Class with Distinction</b>. Developed strong foundations in software development, database systems, and machine learning. Executed data-centric projects using Python (Pandas, NumPy) and SQL, demonstrating analytical thinking and practical implementation of academic knowledge.
                         </p>
                     </div>
                 </div> <!-- end column -->
+        
                 <div class="column" data-aos="fade-up">
                     <div class="position">
                         <div class="position__header">
                             <h6>
-                                <span class="position__co">JKPHSS</span>
-                                <span class="position__pos">HSC</span>
+                                <span class="position__co"><i class="fa-solid fa-school"></i> JKPHSS</span>
+                                <span class="position__pos">Higher Secondary Certificate (HSC)</span>
                             </h6>
                             <div class="position__timeframe">
-                                June 2019 - April 2020
+                                June 2019 – April 2020
                             </div>
                         </div>
-
+        
                         <p>
-                            Completed Higher Secondary Certificate with Mathematics and Computer Science, achieving 78%.
+                            Completed Higher Secondary education with a specialization in Mathematics and Computer Science. Secured <b>78%</b>, building foundational knowledge in logic, programming, and computational thinking.
                         </p>
                     </div>
                 </div> <!-- end column -->
+        
                 <div class="column" data-aos="fade-up">
                     <div class="position">
                         <div class="position__header">
                             <h6>
-                                <span class="position__co">JKPHSS</span>
-                                <span class="position__pos">SSLC</span>
+                                <span class="position__co"><i class="fa-solid fa-school-flag"></i> JKPHSS</span>
+                                <span class="position__pos">Secondary School Leaving Certificate (SSLC)</span>
                             </h6>
                             <div class="position__timeframe">
-                                June 2017 - April 2018
+                                June 2017 – April 2018
                             </div>
                         </div>
-
+        
                         <p>
-                            Completed Secondary School Leaving Certificate with 92%.
+                            Achieved <b>92%</b> in SSLC, demonstrating strong academic performance and consistent dedication throughout early education.
                         </p>
                     </div>
                 </div> <!-- end column -->
-
+        
             </div> <!-- work positions -->
-
-        </div> <!-- end s-about__section -->
+        
+        </div>
+         <!-- end s-about__section -->
 
     </section> <!-- end s-about -->
 
@@ -473,5 +477,23 @@
     }
     
     typeWriter(roles[index]);
+
+
+    document.querySelectorAll('.services-list__item-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const currentItem = header.parentElement;
+        const isActive = currentItem.classList.contains('is-active');
+
+        // Close all first
+        document.querySelectorAll('.services-list__item').forEach(item => {
+            item.classList.remove('is-active');
+        });
+
+        // Toggle only if not already active
+        if (!isActive) {
+            currentItem.classList.add('is-active');
+        }
+    });
+});
     </script>
     </html>

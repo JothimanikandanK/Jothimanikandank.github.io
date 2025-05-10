@@ -2821,6 +2821,10 @@ html.no-csstransitions .hero-content {
   display: none;
 }
 
+.services-list__item.is-active .services-list__item-body {
+  display: block;
+}
+
 .is-active .services-list__item-header::after {
   -webkit-transform: rotate(225deg);
   transform: rotate(225deg);
@@ -2828,6 +2832,68 @@ html.no-csstransitions .hero-content {
 
 .is-active .services-list__item-body {
   display: block;
+}
+
+/* === Modern Style Enhancements === */
+
+.services-list__item {
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 2.4rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.services-list__item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateY(-4px);
+}
+
+.services-list__item-header {
+  padding: 2.8rem 6rem 2.8rem 4.5rem;
+}
+
+.services-list__item-header h5 {
+  font-size: 3.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.services-list__item:hover .services-list__item-header h5 {
+  color: #f9861a;
+}
+
+.services-list__item-body {
+  padding: 1.6rem 4.5rem 2.8rem 4.5rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.015);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Optional: Smooth expand animation */
+.services-list__item-body {
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.is-active .services-list__item-body {
+  opacity: 1;
+  max-height: 300px;
+}
+
+/* Arrow animation smoothing */
+.services-list__item-header::after {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.services-list__item:hover .services-list__item-header::after {
+  border-color: #f9861a;
 }
 
 /* ------------------------------------------------------------------- 
