@@ -30,6 +30,10 @@
     <link rel="icon" id="mani" type="image/png" sizes="16x16" href="imgg.png">
     <link rel="manifest" href="site.webmanifest">
 
+        
+
+    
+
 </head>
 
 <body id="top">
@@ -79,39 +83,33 @@
 
     <!-- hero
     ================================================== -->
-    <section id="hero" class="s-hero target-section" data-parallax="scroll" data-image-src="images/bag.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="hero" class="s-hero target-section" data-parallax="scroll" data-image-src="images/bag.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
 
         <div class="row hero-content">
-
-            <div class="column large-full">
-
-                <h1>
-                Hello, I'm Jothimanikandan K, <br>
-                campaign analyst
-
-                </h1>
-
-                <ul class="hero-social">
-                    <li>
-                        <a href="https://www.linkedin.com/in/jothimanikandan-k-9974a4239/" title="">Linked In</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/JothimanikandanK" title="">Github</a>
-                    </li>
-                    
-                </ul> <!-- end hero-social -->
-
-            </div> 
-
-        </div> <!-- end hero-content -->
-
+          <div class="column large-full hero-text-wrapper">
+      
+            <h1 class="hero-heading">
+                Hello, I'm <span class="highlight">Jothimanikandan K</span><br>
+                <span class="hero-role" id="role-text"></span>
+            </h1>
+              
+      
+            <ul class="hero-social">
+              <li><a href="https://www.linkedin.com/in/jothimanikandan-k-9974a4239/" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/JothimanikandanK" target="_blank">GitHub</a></li>
+            </ul>
+      
+          </div>
+        </div>
+      
         <div class="hero-scroll">
-            <a href="#about" class="scroll-link smoothscroll">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
-            </a>
-        </div> <!-- end hero-scroll -->
-
-    </section> <!-- end s-hero -->
+          <a href="#about" class="scroll-link smoothscroll">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#fff" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
+          </a>
+        </div>
+      
+      </section>
+      <!-- end s-hero -->
 
 
     <!-- about
@@ -440,3 +438,37 @@
     <script src="js/main.js"></script>
 
 </body>
+<script>
+    const roles = [
+      "Campaign Analyst",
+      "Data Scientist",
+      "Dashboard Developer",
+      "SQL Enthusiast",
+      "Python Programmer"
+    ];
+    
+    let index = 0;
+    const roleEl = document.getElementById("role-text");
+    
+    function typeWriter(text, i = 0) {
+      if (i <= text.length) {
+        roleEl.textContent = text.substring(0, i);
+        setTimeout(() => typeWriter(text, i + 1), 100);
+      } else {
+        setTimeout(() => deleteWriter(text), 1500); // pause before deleting
+      }
+    }
+    
+    function deleteWriter(text, i = text.length) {
+      if (i >= 0) {
+        roleEl.textContent = text.substring(0, i);
+        setTimeout(() => deleteWriter(text, i - 1), 50);
+      } else {
+        index = (index + 1) % roles.length;
+        typeWriter(roles[index]);
+      }
+    }
+    
+    typeWriter(roles[index]);
+    </script>
+    </html>
