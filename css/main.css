@@ -2478,9 +2478,20 @@ html.no-csstransitions .hero-content {
 .s-about__section--profile .profile-pic {
   width: 24vw;
   position: absolute;
-  top: 8rem;
-  left: calc(50% + 80px);
+  top: 3rem;
+  left: calc(50% + 110px);
+  max-width: 300px;
+  overflow: hidden;
 }
+
+.s-about__section--profile .profile-pic img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
 
 /* ------------------------------------------------------------------- 
  * ## career position
