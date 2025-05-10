@@ -49,7 +49,61 @@
  *
  * =================================================================== */
 
+/* Align your custom button in the top-right corner */
+.btn-download-cv {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #000000);
+  border: 0px solid transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
+  /* Header positioning */
+  position: absolute;
+  top: 50%;
+  right: 8rem;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.btn-download-cv:hover {
+  background: transparent;
+  color: #f9861a;
+  border-color: #f9861a;
+  box-shadow: 0 0 0 2px #f9861a inset;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1700px) {
+  .btn-download-cv {
+    right: 6rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .btn-download-cv {
+    margin-top: 4.8rem;
+    transform: translate3d(0, -2rem, 0);
+    opacity: 0;
+    visibility: hidden;
+    position: static;
+  }
+
+  .menu-is-open .btn-download-cv {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 0.7s;
+  }
+}
 
 
 /* ===================================================================
@@ -2140,13 +2194,18 @@ input::-moz-focus-inner {
 .hero-social a {
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .hero-social a:hover,
 .hero-social a:focus,
 .hero-social a:active {
-  color: #f9861a;
+  color: #fff;
+  background-color: rgba(249, 134, 26, 0.1);
+  box-shadow: 0 0 10px rgb(247, 144, 41);
+  transform: scale(1.05);
 }
 
 /* -------------------------------------------------------------------
@@ -3367,6 +3426,26 @@ html.no-csstransitions .hero-content {
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
+
+.footer-contact-block__list a {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-block__list a::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: #f9861a;
+  transition: transform 0.3s ease;
+}
+
+.footer-contact-block__list a:hover::before {
+  transform: translateX(4px);
+}
+
 
 /* ------------------------------------------------------------------- 
  * ## copyright
